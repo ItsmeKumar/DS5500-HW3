@@ -95,7 +95,7 @@ plt.ylabel('Total Federal Funding ($)');
 
 
 
-![png](output_4_1.png)
+![png](https://github.com/ItsmeKumar/DS5500-HW3/blob/master/figures/output_4_1.png)
 
 
 
@@ -202,7 +202,7 @@ exp_rev.query('DEBT_PS>0')['DEBT_PS'].sort_values()
 ```
 
 
-![png](output_7_0.png)
+![png](https://github.com/ItsmeKumar/DS5500-HW3/blob/master/figures/output_7_0.png)
 
 
     Ranking of states by debt per student:
@@ -277,7 +277,7 @@ plt.title('Histogram of percent of proficient students in math');
 ```
 
 
-![png](output_10_0.png)
+![png](https://github.com/ItsmeKumar/DS5500-HW3/blob/master/figures/output_10_0.png)
 
 
 ## Problem 4
