@@ -297,8 +297,9 @@ print('15% of the U.S. federal budget currently being spent on funding school di
 condition = (fiscal_data['TOTALREV']>0) & (fiscal_data['TOTALEXP']>0)
 cut_rev = fiscal_data.assign(DEBT = fiscal_data['TOTALEXP'] - fiscal_data['TOTALREV']).query('DEBT<0')
 cut_rev['DEBT'] = -cut_rev['DEBT']
-available_amount = cut_rev['DEBT'].sum()
-cut_rev['CUT'] = (cut_amount/available_amount)*cut_rev['DEBT']
+cut_rev = cut_rev.assign(AVAILABLE_CUT = cut_rev[['DEBT','TFEDREV']].min(axis=1))
+available_amount = cut_rev['AVAILABLE_CUT'].sum()
+cut_rev['CUT'] = (cut_amount/available_amount)*cut_rev['AVAILABLE_CUT']
 cut_rev['CUT'] = round(cut_rev['CUT'])
 cut_rev[['LEAID','CUT']]
 ```
@@ -643,4 +644,4 @@ cut_rev[['LEAID','CUT']]
 
 ## Problem 5
 
-Selected the school districts whose expenditure is less than funding. Cutting equal amount of funds from all the selected districts will be biased for the ones with lower funding. So, an equal proportion of funding was cut down from each of the districts to reduce the total federal funding by 15%.
+Selected the school districts whose expenditure is less than funding. Cutting equal amount of funds from all the selected districts will be biased for the ones with lower funding. So, an equal proportion of available funding was cut down from each of the districts to reduce the total federal funding by 15%.
