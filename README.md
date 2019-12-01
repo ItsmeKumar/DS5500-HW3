@@ -644,4 +644,4 @@ cut_rev[['LEAID','CUT']]
 
 ## Problem 5
 
-Selected the school districts whose expenditure is less than funding. Cutting equal amount of funds from all the selected districts will be biased for the ones with lower funding. So, an equal proportion of available funding was cut down from each of the districts to reduce the total federal funding by 15%.
+Selected the school districts whose expenditure is less than revenue. Cutting equal amount of funds from all the selected districts will be biased for the ones with lower funding. So, an equal proportion of available funding was cut down from each of the districts to reduce the total federal funding by 15%.
